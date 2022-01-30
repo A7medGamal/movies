@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "Movies";
+}
+<h2>Movies</h2>
+<a class="btn btn-primary" asp-action="Create">Add Movie</a>
+<hr />
+<div class="mt-4">
+    
+        @if (!Model.Any())
+        {
+            <div class="alert alert-warning" role="alert">
+               No Movies yet
+            </div>
+        }
+        else
+        {
+            <ul>
+            @foreach(var movie in Model)
+            {
+                <li>@movie.Title</li>
+            }
+            </ul>
+        }
+    
+
+</div>
+
